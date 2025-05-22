@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="/accest/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <title>Zack Tatkal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background-color: #141414; /* Dark background for Netflix theme */
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #ffffff; /* White text for contrast */
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(20, 20, 20, 0.9);
+      transition: background-color 0.3s;
+    }
+
+    header:hover {
+      background-color: rgba(20, 20, 20, 1);
+    }
+
+    .btn {
+      background: #e50914; /* Netflix red */
+      border-radius: 30px;
+      padding: 10px 20px;
+      color: white;
+      font-weight: 500;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #f40612; /* Darker red on hover */
+    }
+
+    .card {
+      background: #222; /* Dark card background */
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: #e50914; /* Netflix red for links */
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="text-[#ffffff]">
+
+  <!-- Header -->
+  <header id="header" class="border-b border-gray-200 px-6 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo + Title -->
+      <div class="flex items-center space-x-3">
+        <img src="/accest/logo.png" alt="Logo" class="w-10 h-10 object-cover"/>
+        <h2 class="text-xl font-semibold text-[#e50914]">Zack Tatkal: A tickets booking tool</h2>
+      </div>
+  
+      <!-- Hamburger button (mobile only) -->
+      <button id="menu-toggle" class="md:hidden text-[#e50914] focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Nav Links -->
+    <nav id="nav-links" class="mt-4 md:mt-0 md:flex space-y-2 md:space-y-0 md:space-x-4 text-[#e50914] font-medium hidden md:flex">
+      <a href="#Services" class="block">Services</a>
+      <a href="#YouTube-Tutorial" class="block">SetUp Tutorial</a>
+      <a href="#Buy_Subscription" class="block">Buy Subscription</a>
+      <a href="#Contact_Telegram" class="block">Contact</a>
+      <a href="#footer-links" class="block">More</a>
+    </nav>
+  </header>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const links = document.getElementById("nav-links");
+  
+      toggle.addEventListener("click", () => {
+        links.classList.toggle("hidden");
+      });
+  
+      // Optional: Icons auto-init
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section id="Services" class="flex flex-col md:flex-row items-center justify-between px-6 py-12">
+    <div class="mb-8 md:mb-0 lg:max-w-[50%]">
+      <h1 class="text-3xl font-bold text-[#e50914] mb-4 lg:mb-8">Try out our fast tickets booking Chrome extension.</h1>
+      <p class="text-[#ffffff]">Zack Tatkal is a powerful browser plugin that helps in booking train tickets by automating form filling on the IRCTC website. <br> We provide a <span class="text-2xl text-[#e50914] font-semibold italic tracking-wide leading-relaxed uppercase">FREE</span> demo booking for all users to experience the power of our extension.</p>
+      
+      <div class="bg-[#222] p-2 rounded-xl shadow mx-auto my-1 mb-5 mr-2 text-3xl font-bold text-[#e50914]">
+        <p class="text-gray-300 text-sm">For Demo Booking, enter 
+          <span class="inline-flex items-center gap-1 bg-[#e50914] text-white px-2 py-0.5 rounded-lg font-mono text-sm cursor-pointer ml-1" id="demoText" onclick="copyDemo()">demo<svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
+          <span id="copyMsg" class="text-green-500 text-xs ml-2 hidden">Copied!</span> in both <span class="bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded font-mono">Username</span> and <span class="bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded font-mono">Password</span> in Subscriber details.
+        </p>
+        <script>
+          function copyDemo() {
+            navigator.clipboard.writeText('demo').then(() => {
+              const copyMsg = document.getElementById('copyMsg');
+              copyMsg.classList.remove('hidden');
+              setTimeout(() => {
+                copyMsg.classList.add('hidden');
+              }, 2000);
+            });
+          }
+        </script>
+      </div>
+      
+      <button class="btn mb-4"><a href="/shahid-tatkal-extention-letest.crx">Download the Extension</a></button>
+      <br>
+      <button class="btn mb-2"><a href="/shahid-tatkal-activator-letest.reg">Activator for Chrome & Edge</a></button>
+      <br>
+      <button class="btn"><a href="/Extention-Deactivator.reg">Deactivator for Chrome & Edge</a></button>
+      <br>
+      <p class="mt-4 text-left text-gray-400">*If you encounter any issues during the download process, please download this <a href="/All_in_one_file-Shahid_Tatkal.zip" class="text-[#e50914] underline">all_in_one.zip</a> file.</p>
+    </div>
+    <img src="/accest/zack-tatkal-popup-html.png" alt="Zack Tatkal Demo Video" class="w-[98%] md:max-w-[55%] lg:max-w-[50%] border rounded-xl"/>
+  </section>
+
+  <!-- YouTube tutorial Video section -->
+  <section id="YouTube-Tutorial" class="p-4 h-[100%] w-[100%] border-t border-gray-200"> 
+    <div class="max-w-3xl mx-auto p-4 bg-[#222] shadow rounded-xl space-y-2 mt-6">
+      <h2 class="text-2xl font-semibold text-center text-[#e50914]">Zack Tatkal Tutorial</h2>
+      <!-- YouTube Video -->
+      <div class="w-full h-[220px] sm:h-[300px] md:h-[360px]">
+        <iframe
+          id="tutorialVideo"
+          class="w-full h-full rounded-lg"
+          src="https://www.youtube.com/embed/AGi_DiUJiBQ?enablejsapi=1"
+          title="Zack Tatkal Tutorial"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <!-- Chapter Buttons Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+        <button onclick="seekTo(0)" class="btn w-full px-4 py-2">Demo Tatkal Booking</button>
+        <button onclick="seekTo(118)" class="btn w-full px-4 py-2">Download Shahid Tatkal</button>
+        <button onclick="seekTo(154)" class="btn w-full px-4 py-2">Install in Browser</button>
+        <button onclick="seekTo(197)" class="btn w-full px-4 py-2">Activate (Chrome/Edge)</button>
+        <button onclick="seekTo(235)" class="btn w-full px-4 py-2">Deactivate (Chrome/Edge)</button>
+        <button onclick="seekTo(255)" class="btn w-full px-4 py-2">Fill Booking Details</button>
+      </div>
+      <!-- Final Full-width Button -->
+      <div>
+        <button onclick="seekTo(334)" class="btn w-full px-6 py-3">How to Buy a Plan</button>
+      </div>
+    </div>
+    <!-- YouTube API and Script -->
+    <script>
+      let player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('tutorialVideo');
+      }
+
+      function seekTo(seconds) {
+        if (player && typeof player.seekTo === 'function') {
+          player.seekTo(seconds, true);
+        }
+      }
+
+      // Load YouTube IFrame API
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+    </script>
+  </section>
+
+  <section id="Buy_Subscription" class="border-t border-gray-200">
+    <iframe id="PaymentURLframe" src="https://zacktatkal.github.io/accest/Payment.html" class="w-full h-[450px] border-0"></iframe>
+  </section>
+
+  <!-- Contact on Telegram -->
+  <section id="Contact_Telegram" class="py-12 px-6 border-t border-gray-200 text-center">
+    <h2 class="text-2xl text-[#e50914] font-semibold mb-6">Contact on Telegram</h2>
+    <p class="text-lg text-[#B3E5FC]">For any inquiries or support, please reach out to us on Telegram:</p><br>
+    <a href="https://t.me/abhi_ontg" class="btn mt-4">Contact Us on Telegram</a>
+  </section>
+
+  <!-- About -->
+  <section class="py-12 px-6 border-t border-gray-200 text-center">
+    <h2 class="text-3xl text-[#e50914] font-bold mb-6">About Us</h2>
+    <div class="max-w-3xl mx-auto text-[#B3E5FC] space-y-6">
+      <p class="text-lg">
+        We provide a Chrome extension service to autofill data on websites, helping users quickly fill booking forms on IRCTC. 
+        We offer this as a subscription-based service. 
+        <br />
+        <span class="font-semibold text-white">We do not book tickets ourselves;</span> we simply provide a tool to automate form filling for your convenience.
+      </p>
+
+      <div class="bg-[#222] p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-semibold text-[#e50914] mb-4">Your Privacy is Our Top Priority</h3>
+        <ul class="text-left text-gray-300 space-y-3">
+          <li>
+            <span class="font-semibold text-white">• No personal data is ever collected, stored, or shared.</span>
+          </li>
+          <li>
+            <span class="font-semibold text-white">• All your information stays securely on your own device.</span>
+          </li>
+          <li>
+            <span class="font-semibold text-white">• Nothing you enter is sent to our servers — you have full control.</span>
+          </li>
+        <li class="mt-6 text-gray-300">
+          <span class="font-semibold text-white">• We believe in full transparency and are committed to keeping your trust.</span>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Links -->
+  <div id="footer-links" class="footer-links border-t border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-8 text-sm text-[#B3E5FC]">
+    <div>
+      <strong class="block text-[#e50914]">Policy</strong><br>
+      <a href="#" onclick="event.preventDefault(); showPopup('Privacy Policy')">Privacy Policy</a><br>
+      <a href="#" onclick="event.preventDefault(); showPopup('Terms & Conditions')">Terms & Conditions</a><br>
+      <a href="#" onclick="event.preventDefault(); showPopup('Disclaimer')">Disclaimer</a>
+    </div>
+    <div>
+      <strong class="block text-[#e50914]">Refund</strong><br>
+      <a href="#" onclick="event.preventDefault(); showPopup('Refund & Cancellation')">Refund & Cancellation</a>
+    </div>
+    <div>
+      <strong class="block text-[#e50914]">Shipping</strong><br>
+      <a href="#" onclick="event.preventDefault(); showPopup('Shipping & Delivery')">Shipping & Delivery</a>
+    </div>
+  </div>
+
+  <script>
+    const popupData = {
+      "Privacy Policy": "We do not store any personal data. All user credentials stay in the browser. We only collect basic info for subscription verification.",
+      "Terms & Conditions": "By using this Chrome extension, you agree to use it responsibly and not for any unlawful purposes. No guarantee of ticket confirmation.",
+      "Disclaimer": "This tool does not book tickets. It only autofills forms on the IRCTC website. We are not affiliated with Indian Railways.",
+      "Refund & Cancellation": "Refunds are only processed for duplicate payments or technical failures. No refund on used subscriptions.",
+      "Shipping & Delivery": "As this is a digital product, there is no physical shipping. The extension is available for download immediately after payment."
+    };
+  
+    function showPopup(title) {
+      document.getElementById('popupTitle').textContent = title;
+      document.getElementById('popupContent').textContent = popupData[title] || "Content coming soon.";
+      document.getElementById('popup').classList.remove('hidden');
+    }
+  
+    function closePopup() {
+      document.getElementById('popup').classList.add('hidden');
+    }
+  </script>
+  
+  <!-- Footer Popup -->
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 relative text-[#1E1E1E]">
+      <button onclick="closePopup()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold">&times;</button>
+      <h3 id="popupTitle" class="text-2xl font-semibold text-[#e50914] mb-4">Popup Title</h3>
+      <p id="popupContent" class="text-sm text-[#4F4F4F] leading-relaxed"></p>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <a href="#header" class="text-[#e50914] underline">Zack Tatkal</a>. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
